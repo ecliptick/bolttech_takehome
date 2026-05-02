@@ -1,0 +1,6 @@
+claimType,channel,excessFee,rrp,issue_desc_en,persona,status
+Liquid Damage,Online Portal,150.0,1200.0,The user reported that their phone fell into a sink while washing dishes. The device is unresponsive and shows signs of internal corrosion.,The Unlucky Spiller (Liquid Damage),Approved
+Accidental Damage,Email,250.0,1100.0,"Customer claims the screen cracked while the device was in a bag, but provided no photos of the bag or surrounding items to corroborate the pressure damage.",The Clumsy Dropper (Standard Accidental),Declined
+Accidental Damage,Online Portal,619.0,14490.0,"Device sustained impact damage during a hiking trip. The customer provided a timestamped photo of the trail, but the damage description is inconsistent with the impact point.",The Active/Sporty (Action Damage),Pending Review
+Theft,Online Portal,450.0,1300.0,"Customer reported the device stolen from a locked locker at the gym. No police report was provided, and the find-my-device logs show the phone was active 2 hours after the reported theft.",The Victim (Theft/Loss),Declined
+Accidental Damage,Online Portal,619.0,9990.0,The device was dropped on a hardwood floor while the user was playing with their dog. The frame is bent and the display is shattered.,The Family/Pet Owner (Chaos Damage),Pending Review

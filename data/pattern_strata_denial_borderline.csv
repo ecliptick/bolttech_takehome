@@ -1,0 +1,481 @@
+claimType,coverage,channel,_fee_tert,coverage_duration_tier,n_total,n_decl,n_border,mean_p_approve,decline_rate,lift_decl,pearson_residual_decl
+Accidental Damage,ADLD,Email,fee_ratio_low,outlier_lt120d,2,0,0,0.915,0.0,0.0,-0.5608772890154613
+Accidental Damage,ADLD,Email,fee_ratio_low,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD,Email,fee_ratio_mid,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD,Email,fee_ratio_mid,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD,Email,fee_ratio_high,outlier_lt120d,1,0,0,0.88,0.0,0.0,-0.3966001344763598
+Accidental Damage,ADLD,Email,fee_ratio_high,tier_appx_24mo,7,0,0,0.91,0.0,0.0,-1.049305325759222
+Accidental Damage,ADLD,Email,fee_ratio_high,tier_appx_6mo,2,0,0,0.9299999999999999,0.0,0.0,-0.5608772890154613
+Accidental Damage,ADLD,Email,,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD,Email,,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD,Email,,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD,Email,,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD,Facebook,fee_ratio_low,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD,Facebook,fee_ratio_low,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD,Facebook,fee_ratio_low,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD,Facebook,fee_ratio_low,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD,Facebook,fee_ratio_mid,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD,Facebook,fee_ratio_mid,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD,Facebook,fee_ratio_mid,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD,Facebook,fee_ratio_mid,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD,Facebook,fee_ratio_high,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD,Facebook,fee_ratio_high,tier_appx_12mo,1,0,0,0.94,0.0,0.0,-0.3966001344763598
+Accidental Damage,ADLD,Facebook,fee_ratio_high,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD,Facebook,fee_ratio_high,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD,Facebook,,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD,Facebook,,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD,Facebook,,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD,Facebook,,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD,Online Portal,,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD,Online Portal,,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD,Phone Call,fee_ratio_low,outlier_lt120d,1,0,0,0.99,0.0,0.0,-0.3966001344763598
+Accidental Damage,ADLD,Phone Call,fee_ratio_low,tier_appx_12mo,7,0,0,0.9655539864993593,0.0,0.0,-1.049305325759222
+Accidental Damage,ADLD,Phone Call,fee_ratio_low,tier_appx_24mo,2,0,0,0.955,0.0,0.0,-0.5608772890154613
+Accidental Damage,ADLD,Phone Call,fee_ratio_mid,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD,Phone Call,fee_ratio_mid,tier_appx_12mo,5,0,0,0.952,0.0,0.0,-0.8868248605746983
+Accidental Damage,ADLD,Phone Call,fee_ratio_mid,tier_appx_24mo,6,0,0,0.9283333333333333,0.0,0.0,-0.9714679613862724
+Accidental Damage,ADLD,Phone Call,fee_ratio_mid,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD,Phone Call,fee_ratio_high,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD,Phone Call,fee_ratio_high,tier_appx_24mo,2,0,0,0.915,0.0,0.0,-0.5608772890154613
+Accidental Damage,ADLD,Phone Call,fee_ratio_high,tier_appx_6mo,1,0,0,0.97,0.0,0.0,-0.3966001344763598
+Accidental Damage,ADLD,Phone Call,,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD,Phone Call,,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD,Phone Call,,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD,Phone Call,,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD,Whatsapp,fee_ratio_low,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD,Whatsapp,fee_ratio_low,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD,Whatsapp,fee_ratio_low,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD,Whatsapp,fee_ratio_low,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD,Whatsapp,fee_ratio_mid,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD,Whatsapp,fee_ratio_mid,tier_appx_12mo,1,0,0,0.96,0.0,0.0,-0.3966001344763598
+Accidental Damage,ADLD,Whatsapp,fee_ratio_mid,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD,Whatsapp,fee_ratio_mid,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD,Whatsapp,fee_ratio_high,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD,Whatsapp,fee_ratio_high,tier_appx_12mo,1,0,0,0.84,0.0,0.0,-0.3966001344763598
+Accidental Damage,ADLD,Whatsapp,fee_ratio_high,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD,Whatsapp,fee_ratio_high,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD,Whatsapp,,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD,Whatsapp,,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD,Whatsapp,,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD,Whatsapp,,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Email,fee_ratio_low,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Email,fee_ratio_low,tier_appx_24mo,2,0,0,0.96,0.0,0.0,-0.5608772890154613
+Accidental Damage,ADLD/THEFT,Email,fee_ratio_low,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Email,fee_ratio_mid,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Email,fee_ratio_mid,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Email,fee_ratio_mid,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Email,fee_ratio_high,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Email,fee_ratio_high,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Email,fee_ratio_high,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Email,,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Email,,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Email,,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Email,,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Facebook,fee_ratio_low,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Facebook,fee_ratio_low,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Facebook,fee_ratio_low,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Facebook,fee_ratio_low,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Facebook,fee_ratio_mid,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Facebook,fee_ratio_mid,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Facebook,fee_ratio_mid,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Facebook,fee_ratio_mid,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Facebook,fee_ratio_high,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Facebook,fee_ratio_high,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Facebook,fee_ratio_high,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Facebook,fee_ratio_high,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Facebook,,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Facebook,,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Facebook,,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Facebook,,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Online Portal,fee_ratio_low,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Online Portal,fee_ratio_low,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Online Portal,fee_ratio_mid,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Online Portal,fee_ratio_mid,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Online Portal,fee_ratio_high,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Online Portal,fee_ratio_high,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Online Portal,,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Online Portal,,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Online Portal,,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Phone Call,fee_ratio_low,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Phone Call,fee_ratio_low,tier_appx_12mo,1,0,0,1.0,0.0,0.0,-0.3966001344763598
+Accidental Damage,ADLD/THEFT,Phone Call,fee_ratio_low,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Phone Call,fee_ratio_low,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Phone Call,fee_ratio_mid,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Phone Call,fee_ratio_mid,tier_appx_12mo,4,0,0,0.915,0.0,0.0,-0.7932002689527196
+Accidental Damage,ADLD/THEFT,Phone Call,fee_ratio_mid,tier_appx_24mo,3,0,0,0.8166666666666668,0.0,0.0,-0.6869315832017042
+Accidental Damage,ADLD/THEFT,Phone Call,fee_ratio_mid,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Phone Call,fee_ratio_high,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Phone Call,fee_ratio_high,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Phone Call,fee_ratio_high,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Phone Call,,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Phone Call,,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Phone Call,,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Phone Call,,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Whatsapp,fee_ratio_low,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Whatsapp,fee_ratio_low,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Whatsapp,fee_ratio_low,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Whatsapp,fee_ratio_low,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Whatsapp,fee_ratio_mid,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Whatsapp,fee_ratio_mid,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Whatsapp,fee_ratio_mid,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Whatsapp,fee_ratio_mid,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Whatsapp,fee_ratio_high,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Whatsapp,fee_ratio_high,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Whatsapp,fee_ratio_high,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Whatsapp,fee_ratio_high,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Whatsapp,,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Whatsapp,,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Whatsapp,,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD/THEFT,Whatsapp,,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Email,fee_ratio_low,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Email,fee_ratio_low,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Email,fee_ratio_low,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Email,fee_ratio_low,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Email,fee_ratio_mid,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Email,fee_ratio_mid,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Email,fee_ratio_mid,tier_appx_24mo,1,0,0,0.96,0.0,0.0,-0.3966001344763598
+Liquid Damage,ADLD,Email,fee_ratio_mid,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Email,fee_ratio_high,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Email,fee_ratio_high,tier_appx_12mo,1,0,0,0.87,0.0,0.0,-0.3966001344763598
+Liquid Damage,ADLD,Email,fee_ratio_high,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Email,fee_ratio_high,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Email,,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Email,,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Email,,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Email,,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Facebook,fee_ratio_low,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Facebook,fee_ratio_low,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Facebook,fee_ratio_low,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Facebook,fee_ratio_low,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Facebook,fee_ratio_mid,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Facebook,fee_ratio_mid,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Facebook,fee_ratio_mid,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Facebook,fee_ratio_mid,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Facebook,fee_ratio_high,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Facebook,fee_ratio_high,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Facebook,fee_ratio_high,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Facebook,fee_ratio_high,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Facebook,,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Facebook,,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Facebook,,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Facebook,,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Online Portal,fee_ratio_low,outlier_lt120d,2,0,0,0.825,0.0,0.0,-0.5608772890154613
+Liquid Damage,ADLD,Online Portal,fee_ratio_low,tier_appx_24mo,1,0,0,0.94,0.0,0.0,-0.3966001344763598
+Liquid Damage,ADLD,Online Portal,fee_ratio_low,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Online Portal,fee_ratio_mid,outlier_lt120d,2,0,0,0.795,0.0,0.0,-0.5608772890154613
+Liquid Damage,ADLD,Online Portal,fee_ratio_mid,tier_appx_24mo,5,0,0,0.93,0.0,0.0,-0.8868248605746983
+Liquid Damage,ADLD,Online Portal,fee_ratio_mid,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Online Portal,fee_ratio_high,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Online Portal,fee_ratio_high,tier_appx_24mo,3,0,0,0.8466666666666667,0.0,0.0,-0.6869315832017042
+Liquid Damage,ADLD,Online Portal,fee_ratio_high,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Online Portal,,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Online Portal,,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Online Portal,,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Phone Call,fee_ratio_low,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Phone Call,fee_ratio_low,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Phone Call,fee_ratio_low,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Phone Call,fee_ratio_low,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Phone Call,fee_ratio_mid,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Phone Call,fee_ratio_mid,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Phone Call,fee_ratio_mid,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Phone Call,fee_ratio_mid,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Phone Call,fee_ratio_high,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Phone Call,fee_ratio_high,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Phone Call,fee_ratio_high,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Phone Call,fee_ratio_high,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Phone Call,,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Phone Call,,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Phone Call,,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Phone Call,,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Whatsapp,fee_ratio_low,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Whatsapp,fee_ratio_low,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Whatsapp,fee_ratio_low,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Whatsapp,fee_ratio_low,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Whatsapp,fee_ratio_mid,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Whatsapp,fee_ratio_mid,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Whatsapp,fee_ratio_mid,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Whatsapp,fee_ratio_mid,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Whatsapp,fee_ratio_high,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Whatsapp,fee_ratio_high,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Whatsapp,fee_ratio_high,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Whatsapp,fee_ratio_high,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Whatsapp,,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Whatsapp,,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Whatsapp,,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD,Whatsapp,,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Email,fee_ratio_low,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Email,fee_ratio_low,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Email,fee_ratio_low,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Email,fee_ratio_low,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Email,fee_ratio_mid,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Email,fee_ratio_mid,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Email,fee_ratio_mid,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Email,fee_ratio_mid,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Email,fee_ratio_high,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Email,fee_ratio_high,tier_appx_12mo,1,0,0,0.97,0.0,0.0,-0.3966001344763598
+Liquid Damage,ADLD/THEFT,Email,fee_ratio_high,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Email,fee_ratio_high,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Email,,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Email,,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Email,,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Email,,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Facebook,fee_ratio_low,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Facebook,fee_ratio_low,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Facebook,fee_ratio_low,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Facebook,fee_ratio_low,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Facebook,fee_ratio_mid,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Facebook,fee_ratio_mid,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Facebook,fee_ratio_mid,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Facebook,fee_ratio_mid,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Facebook,fee_ratio_high,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Facebook,fee_ratio_high,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Facebook,fee_ratio_high,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Facebook,fee_ratio_high,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Facebook,,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Facebook,,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Facebook,,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Facebook,,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Online Portal,fee_ratio_low,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Online Portal,fee_ratio_low,tier_appx_12mo,3,0,0,0.92,0.0,0.0,-0.6869315832017042
+Liquid Damage,ADLD/THEFT,Online Portal,fee_ratio_low,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Online Portal,fee_ratio_low,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Online Portal,fee_ratio_mid,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Online Portal,fee_ratio_mid,tier_appx_24mo,2,0,0,0.905,0.0,0.0,-0.5608772890154613
+Liquid Damage,ADLD/THEFT,Online Portal,fee_ratio_mid,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Online Portal,fee_ratio_high,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Online Portal,fee_ratio_high,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Online Portal,,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Online Portal,,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Online Portal,,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Online Portal,,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Phone Call,fee_ratio_low,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Phone Call,fee_ratio_low,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Phone Call,fee_ratio_low,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Phone Call,fee_ratio_low,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Phone Call,fee_ratio_mid,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Phone Call,fee_ratio_mid,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Phone Call,fee_ratio_mid,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Phone Call,fee_ratio_mid,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Phone Call,fee_ratio_high,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Phone Call,fee_ratio_high,tier_appx_12mo,1,0,0,0.76,0.0,0.0,-0.3966001344763598
+Liquid Damage,ADLD/THEFT,Phone Call,fee_ratio_high,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Phone Call,fee_ratio_high,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Phone Call,,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Phone Call,,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Phone Call,,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Phone Call,,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Whatsapp,fee_ratio_low,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Whatsapp,fee_ratio_low,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Whatsapp,fee_ratio_low,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Whatsapp,fee_ratio_low,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Whatsapp,fee_ratio_mid,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Whatsapp,fee_ratio_mid,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Whatsapp,fee_ratio_mid,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Whatsapp,fee_ratio_mid,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Whatsapp,fee_ratio_high,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Whatsapp,fee_ratio_high,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Whatsapp,fee_ratio_high,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Whatsapp,fee_ratio_high,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Whatsapp,,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Whatsapp,,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Whatsapp,,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Liquid Damage,ADLD/THEFT,Whatsapp,,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Email,fee_ratio_low,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Email,fee_ratio_low,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Email,fee_ratio_low,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Email,fee_ratio_low,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Email,fee_ratio_mid,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Email,fee_ratio_mid,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Email,fee_ratio_mid,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Email,fee_ratio_mid,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Email,fee_ratio_high,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Email,fee_ratio_high,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Email,fee_ratio_high,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Email,fee_ratio_high,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Email,,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Email,,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Email,,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Email,,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Facebook,fee_ratio_low,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Facebook,fee_ratio_low,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Facebook,fee_ratio_low,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Facebook,fee_ratio_low,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Facebook,fee_ratio_mid,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Facebook,fee_ratio_mid,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Facebook,fee_ratio_mid,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Facebook,fee_ratio_mid,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Facebook,fee_ratio_high,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Facebook,fee_ratio_high,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Facebook,fee_ratio_high,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Facebook,fee_ratio_high,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Facebook,,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Facebook,,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Facebook,,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Facebook,,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Online Portal,fee_ratio_low,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Online Portal,fee_ratio_low,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Online Portal,fee_ratio_low,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Online Portal,fee_ratio_low,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Online Portal,fee_ratio_mid,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Online Portal,fee_ratio_mid,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Online Portal,fee_ratio_mid,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Online Portal,fee_ratio_mid,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Online Portal,fee_ratio_high,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Online Portal,fee_ratio_high,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Online Portal,fee_ratio_high,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Online Portal,fee_ratio_high,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Online Portal,,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Online Portal,,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Online Portal,,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Online Portal,,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Phone Call,fee_ratio_low,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Phone Call,fee_ratio_low,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Phone Call,fee_ratio_low,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Phone Call,fee_ratio_low,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Phone Call,fee_ratio_mid,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Phone Call,fee_ratio_mid,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Phone Call,fee_ratio_mid,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Phone Call,fee_ratio_mid,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Phone Call,fee_ratio_high,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Phone Call,fee_ratio_high,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Phone Call,fee_ratio_high,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Phone Call,fee_ratio_high,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Phone Call,,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Phone Call,,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Phone Call,,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Phone Call,,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Whatsapp,fee_ratio_low,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Whatsapp,fee_ratio_low,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Whatsapp,fee_ratio_low,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Whatsapp,fee_ratio_low,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Whatsapp,fee_ratio_mid,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Whatsapp,fee_ratio_mid,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Whatsapp,fee_ratio_mid,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Whatsapp,fee_ratio_mid,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Whatsapp,fee_ratio_high,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Whatsapp,fee_ratio_high,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Whatsapp,fee_ratio_high,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Whatsapp,fee_ratio_high,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Whatsapp,,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Whatsapp,,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Whatsapp,,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD,Whatsapp,,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Email,fee_ratio_low,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Email,fee_ratio_low,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Email,fee_ratio_low,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Email,fee_ratio_low,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Email,fee_ratio_mid,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Email,fee_ratio_mid,tier_appx_12mo,3,0,0,0.9666666666666667,0.0,0.0,-0.6869315832017042
+Theft,ADLD/THEFT,Email,fee_ratio_mid,tier_appx_24mo,1,0,0,0.96,0.0,0.0,-0.3966001344763598
+Theft,ADLD/THEFT,Email,fee_ratio_mid,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Email,fee_ratio_high,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Email,fee_ratio_high,tier_appx_12mo,1,0,0,0.86,0.0,0.0,-0.3966001344763598
+Theft,ADLD/THEFT,Email,fee_ratio_high,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Email,fee_ratio_high,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Email,,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Email,,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Email,,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Email,,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Facebook,fee_ratio_low,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Facebook,fee_ratio_low,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Facebook,fee_ratio_low,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Facebook,fee_ratio_low,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Facebook,fee_ratio_mid,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Facebook,fee_ratio_mid,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Facebook,fee_ratio_mid,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Facebook,fee_ratio_mid,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Facebook,fee_ratio_high,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Facebook,fee_ratio_high,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Facebook,fee_ratio_high,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Facebook,fee_ratio_high,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Facebook,,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Facebook,,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Facebook,,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Facebook,,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Online Portal,fee_ratio_low,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Online Portal,fee_ratio_low,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Online Portal,fee_ratio_low,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Online Portal,fee_ratio_low,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Online Portal,fee_ratio_mid,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Online Portal,fee_ratio_mid,tier_appx_24mo,4,0,0,0.935,0.0,0.0,-0.7932002689527196
+Theft,ADLD/THEFT,Online Portal,fee_ratio_mid,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Online Portal,fee_ratio_high,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Online Portal,fee_ratio_high,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Online Portal,,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Online Portal,,tier_appx_12mo,1,0,0,0.88,0.0,0.0,-0.3966001344763598
+Theft,ADLD/THEFT,Online Portal,,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Online Portal,,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Phone Call,fee_ratio_low,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Phone Call,fee_ratio_low,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Phone Call,fee_ratio_low,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Phone Call,fee_ratio_low,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Phone Call,fee_ratio_mid,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Phone Call,fee_ratio_mid,tier_appx_12mo,2,0,0,0.74,0.0,0.0,-0.5608772890154613
+Theft,ADLD/THEFT,Phone Call,fee_ratio_mid,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Phone Call,fee_ratio_mid,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Phone Call,fee_ratio_high,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Phone Call,fee_ratio_high,tier_appx_12mo,2,0,0,0.855,0.0,0.0,-0.5608772890154613
+Theft,ADLD/THEFT,Phone Call,fee_ratio_high,tier_appx_24mo,1,0,0,0.93,0.0,0.0,-0.3966001344763598
+Theft,ADLD/THEFT,Phone Call,fee_ratio_high,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Phone Call,,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Phone Call,,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Phone Call,,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Phone Call,,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Whatsapp,fee_ratio_low,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Whatsapp,fee_ratio_low,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Whatsapp,fee_ratio_low,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Whatsapp,fee_ratio_low,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Whatsapp,fee_ratio_mid,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Whatsapp,fee_ratio_mid,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Whatsapp,fee_ratio_mid,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Whatsapp,fee_ratio_mid,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Whatsapp,fee_ratio_high,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Whatsapp,fee_ratio_high,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Whatsapp,fee_ratio_high,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Whatsapp,fee_ratio_high,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Whatsapp,,outlier_lt120d,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Whatsapp,,tier_appx_12mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Whatsapp,,tier_appx_24mo,0,0,0,,0.0,0.0,0.0
+Theft,ADLD/THEFT,Whatsapp,,tier_appx_6mo,0,0,0,,0.0,0.0,0.0
+Accidental Damage,ADLD,Email,fee_ratio_mid,tier_appx_12mo,8,1,0,0.872479024710213,0.125,0.794701986754967,-0.23029398621826888
+Accidental Damage,ADLD,Email,fee_ratio_mid,tier_appx_24mo,9,1,0,0.8411111111111111,0.1111111111111111,0.706401766004415,-0.34932329725401223
+Accidental Damage,ADLD,Online Portal,,tier_appx_24mo,1,1,0,0.94,1.0,6.357615894039736,2.124831184048842
+Accidental Damage,ADLD/THEFT,Email,fee_ratio_high,tier_appx_12mo,3,1,0,0.7133333333333333,0.3333333333333333,2.1192052980132448,0.7688174672919736
+Liquid Damage,ADLD,Online Portal,,tier_appx_12mo,1,1,0,0.28,1.0,6.357615894039736,2.124831184048842
+Liquid Damage,ADLD/THEFT,Online Portal,fee_ratio_mid,tier_appx_12mo,4,1,0,0.735,0.25,1.589403973509934,0.4675153903098811
+Accidental Damage,ADLD,Email,fee_ratio_low,tier_appx_24mo,6,1,1,0.7799999999999999,0.16666666666666666,1.0596026490066224,0.05790206392368513
+Accidental Damage,ADLD,Phone Call,fee_ratio_low,tier_appx_6mo,4,1,1,0.8200000000000001,0.25,1.589403973509934,0.4675153903098811
+Liquid Damage,ADLD,Online Portal,fee_ratio_mid,tier_appx_12mo,9,1,1,0.7857368827160494,0.1111111111111111,0.706401766004415,-0.34932329725401223
+Liquid Damage,ADLD/THEFT,Online Portal,fee_ratio_high,tier_appx_24mo,1,1,1,0.42,1.0,6.357615894039736,2.124831184048842
+Accidental Damage,ADLD/THEFT,Email,fee_ratio_mid,tier_appx_12mo,11,1,2,0.8167087573246904,0.09090909090909091,0.5779650812763396,-0.5551336907535633
+Accidental Damage,ADLD/THEFT,Online Portal,fee_ratio_high,tier_appx_24mo,12,2,0,0.7633333333333333,0.16666666666666666,1.0596026490066224,0.08188588409026941
+Accidental Damage,ADLD/THEFT,Phone Call,fee_ratio_high,tier_appx_12mo,4,2,0,0.6225,0.5,3.178807947019868,1.7282310495724817
+Accidental Damage,ADLD,Online Portal,fee_ratio_high,outlier_lt120d,4,2,1,0.6699999999999999,0.5,3.178807947019868,1.7282310495724817
+Accidental Damage,ADLD/THEFT,Email,fee_ratio_low,tier_appx_12mo,8,2,1,0.765,0.25,1.589403973509934,0.6611666055943849
+Accidental Damage,ADLD/THEFT,Online Portal,,tier_appx_12mo,2,2,1,0.37,1.0,6.357615894039736,3.0049650782351542
+Liquid Damage,ADLD,Online Portal,fee_ratio_low,tier_appx_12mo,11,2,1,0.7972727272727272,0.18181818181818182,1.1559301625526792,0.2051064563554535
+Liquid Damage,ADLD/THEFT,Online Portal,fee_ratio_high,tier_appx_12mo,6,2,1,0.6266666666666667,0.3333333333333333,2.1192052980132448,1.0872720892336425
+Theft,ADLD/THEFT,Online Portal,fee_ratio_high,tier_appx_24mo,8,2,1,0.8712500000000001,0.25,1.589403973509934,0.6611666055943849
+Accidental Damage,ADLD,Phone Call,fee_ratio_high,tier_appx_12mo,11,3,0,0.729090909090909,0.2727272727272727,1.7338952438290185,0.9653466034644703
+Accidental Damage,ADLD/THEFT,Online Portal,fee_ratio_low,tier_appx_24mo,23,3,1,0.8921739130434783,0.13043478260869565,0.8292542470486611,-0.3247631051694706
+Accidental Damage,ADLD,Online Portal,,tier_appx_12mo,4,3,2,0.5725,0.75,4.768211920529802,2.9889467088350825
+Accidental Damage,ADLD,Online Portal,fee_ratio_mid,tier_appx_6mo,40,4,3,0.8474999999999999,0.1,0.6357615894039735,-0.913626304504506
+Accidental Damage,ADLD,Online Portal,fee_ratio_high,tier_appx_6mo,26,4,3,0.8361538461538461,0.15384615384615385,0.9780947529291901,-0.04429836396632956
+Accidental Damage,ADLD,Online Portal,fee_ratio_low,outlier_lt120d,51,5,0,0.903921568627451,0.09803921568627451,0.6232956758862486,-1.0669364458257307
+Liquid Damage,ADLD,Online Portal,fee_ratio_high,tier_appx_12mo,13,5,3,0.713076923076923,0.38461538461538464,2.445236882322975,2.0666339971754897
+Accidental Damage,ADLD,Email,fee_ratio_high,tier_appx_12mo,26,6,1,0.75068865353114,0.23076923076923078,1.4671421293937852,0.9446883664447464
+Accidental Damage,ADLD,Email,fee_ratio_low,tier_appx_12mo,40,6,2,0.9062388004437908,0.15,0.9536423841059603,-0.11627971148239147
+Accidental Damage,ADLD,Online Portal,fee_ratio_low,tier_appx_6mo,84,6,2,0.8994047619047618,0.07142857142857142,0.4541154210028382,-1.9842360056245902
+Accidental Damage,ADLD,Online Portal,fee_ratio_mid,outlier_lt120d,24,8,3,0.8470833333333333,0.3333333333333333,2.1192052980132448,2.174544178467285
+Accidental Damage,ADLD/THEFT,Online Portal,fee_ratio_mid,tier_appx_24mo,82,8,3,0.9090774621898907,0.0975609756097561,0.6202552091746083,-1.3638028963393256
+Theft,ADLD/THEFT,Online Portal,fee_ratio_mid,tier_appx_12mo,28,9,3,0.7300302663438256,0.32142857142857145,2.043519394512772,2.1899409163905803
+Theft,ADLD/THEFT,Online Portal,fee_ratio_high,tier_appx_12mo,47,9,3,0.8168085106382978,0.19148936170212766,1.2174158094969705,0.5911434841103033
+Accidental Damage,ADLD,Online Portal,fee_ratio_low,tier_appx_24mo,120,10,5,0.9266262110095587,0.08333333333333333,0.5298013245033112,-2.042795448651948
+Accidental Damage,ADLD/THEFT,Online Portal,fee_ratio_low,tier_appx_12mo,116,10,9,0.8907333428700958,0.08620689655172414,0.5480703356930806,-1.930423966455074
+Accidental Damage,ADLD,Online Portal,fee_ratio_high,tier_appx_24mo,75,19,12,0.7933333333333333,0.25333333333333335,1.6105960264900665,2.097188475867455
+Accidental Damage,ADLD/THEFT,Online Portal,fee_ratio_high,tier_appx_12mo,96,20,11,0.7881978331469671,0.20833333333333334,1.3245033112582782,1.260978281004698
+Accidental Damage,ADLD,Online Portal,fee_ratio_mid,tier_appx_24mo,207,24,10,0.871513343701718,0.11594202898550725,0.7371148862654766,-1.500044089475851
+Accidental Damage,ADLD/THEFT,Online Portal,fee_ratio_mid,tier_appx_12mo,186,26,11,0.8720684276657913,0.13978494623655913,0.8886989959410382,-0.602016523416919
+Accidental Damage,ADLD,Online Portal,fee_ratio_mid,tier_appx_12mo,312,49,24,0.8448234063181271,0.15705128205128205,0.9984717269485481,-0.010706095406770689
+Accidental Damage,ADLD,Online Portal,fee_ratio_low,tier_appx_12mo,472,61,36,0.8592588939871985,0.1292372881355932,0.8216410371534403,-1.536805105739347
+Accidental Damage,ADLD,Online Portal,fee_ratio_high,tier_appx_12mo,599,128,46,0.7806489096331792,0.21368948247078465,1.358555650145386,3.4803493433767128

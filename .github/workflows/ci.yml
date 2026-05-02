@@ -1,0 +1,71 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install -U pip
+          pip install -r requirements.txt
+          pip install -e .
+
+      - name: Train model from Excel workbook
+        env:
+          PYTHONPATH: ${{ github.workspace }}
+        run: |
+          test -f claim_use_case_dataset.xlsx
+          python -m app.ml.train --no-tune --seed 42
+
+      - name: Lint
+        run: ruff check app streamlit_app.py tests
+
+      - name: Smoke-import Streamlit shell
+        env:
+          PYTHONPATH: ${{ github.workspace }}
+        run: python -m py_compile streamlit_app.py
+
+      - name: Tests
+        env:
+          PYTHONPATH: ${{ github.workspace }}
+          DISABLE_PROMETHEUS: "1"
+        run: pytest -q
+
+      - name: Upload ML artifacts (model + metadata)
+        uses: actions/upload-artifact@v4
+        with:
+          name: ml-artifacts-${{ github.sha }}
+          path: |
+            artifacts/*.joblib
+            artifacts/*.json
+          if-no-files-found: warn
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build API image (validates Dockerfile; uses artifacts/ from train step)
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: false
+          tags: claim-approval-agent:ci
+          load: true
+
+      - name: Smoke container (health)
+        run: |
+          docker run -d --name api -p 8765:8000 -e DISABLE_PROMETHEUS=1 claim-approval-agent:ci
+          sleep 4
+          curl -fsS http://127.0.0.1:8765/health
+          docker stop api

@@ -1,0 +1,2 @@
+Audience: experienced claims adjuster. Tone: operational, concise bullets.
+Include: decision summary with probability/confidence framing, prioritized risk drivers, fraud/heuristics checkpoints to review, reserving/referral cues, reconciliation items if model vs. manual review differs, and citation that factors are statistical not legal findings.

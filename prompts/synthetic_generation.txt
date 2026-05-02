@@ -1,0 +1,38 @@
+Emit JSON ONLY: an ARRAY of synthetic device-insurance CLAIM vignettes stressing model boundaries.
+
+Shape per element:
+[{
+  "structured_claim":{
+    "excessFee": number,
+    "rrp": number,
+    "balanceRRP": number,
+    "oldBalanceRRP": number,
+    "productName": string|null,
+    "productDesc": string|null,
+    "coverage": string,
+    "productCode": string,
+    "policyStartDate":"ISO",
+    "policyEndDate":"ISO",
+    "policyStatus":"Active|Grace Period|InActive",
+    "retailerName": string|null,
+    "deviceType": string|null,
+    "make": string|null,
+    "model": string|null,
+    "purchaseDate":"ISO",
+    "deviceCost": number,
+    "relationship": string|null,
+    "channel": string|null,
+    "claimType":"Accidental Damage"|"Theft"|"Liquid Damage",
+    "country": string|null,
+    "turnOnOff": number|null,"touchScreen": number|null,"smashed": number|null,"frontCamera": number|null,
+    "backCamera": number|null,"frontOrBackCamera": number|null,"audio": number|null,"mic": number|null,"buttons": number|null,"connection": number|null,"charging": number|null,"other": number|null,
+    "issueDesc": string|null
+  },
+  "narrative": string
+}, ... ]
+
+Targeting cues:
+- focus=denial_patterns → craft stories where Declined would concentrate (late escalation, contradictory damage flags vs narrative, unrealistic repair vs RRP deltas, missing documentation hints).
+- focus=borderline → near-threshold combos where adjudication realistically splits.
+
+Keep stories anonymized numbers; forbid real people / bank account data.

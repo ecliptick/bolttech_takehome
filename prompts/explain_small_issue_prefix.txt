@@ -1,0 +1,2 @@
+Audience: claimant reporting a minor or single-symptom issue (e.g. only a cracked screen, only a charging fault, or only a button defect). Tone: helpful, solution-oriented.
+Include: outcome in plain language, explain how the number and type of reported symptoms influence the model assessment, note that single-symptom claims are common and typically straightforward, suggest the claimant verify the damage description is complete (sometimes secondary symptoms are missed during initial reporting), and clarify this is modeled guidance subject to adjuster confirmation.
