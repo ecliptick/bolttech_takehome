@@ -1,0 +1,22 @@
+{
+  "trained_at": "2026-04-30T23:59:44.809713+00:00",
+  "data_path": "C:\\coding\\boltech\\claim_use_case_dataset.xlsx",
+  "n_rows": 2880,
+  "holdout_fraction": 0.2,
+  "random_state": 42,
+  "best_params": {
+    "note": "tune_off_defaults"
+  },
+  "metrics": {
+    "roc_auc": 0.5582530871190665,
+    "accuracy": 0.8420138888888888,
+    "f1": 0.9124157844080847
+  },
+  "baseline_metrics": {
+    "roc_auc": 0.5,
+    "accuracy": 0.8420138888888888,
+    "f1": 0.9142318567389256
+  },
+  "sklearn_version": "1.8.0",
+  "git_commit": null
+}

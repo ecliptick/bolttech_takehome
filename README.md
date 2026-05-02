@@ -7,12 +7,12 @@ Interactive **Streamlit** app that predicts claim **completion vs declined** out
 | Area | Approach |
 |------|----------|
 | ML | sklearn `Pipeline` (`ColumnTransformer` + `RandomForestClassifier`), optional `RandomizedSearchCV`, JSON metadata beside `artifacts/approval_model.joblib` |
-| GenAI | OpenAI-compatible chat; personas via `prompts/*.txt`; offline stubs when keys absent |
+| GenAI | **Gemini** `generateContent` (optional OpenAI-compatible fallback); personas via `prompts/*.txt`; offline stubs when keys absent |
 | UI | **`streamlit run streamlit_app.py`** forms + seeded Excel rows |
 | API (optional) | FastAPI `/v1/predict`, `/v1/explain`, `/v1/synthetic` |
 | Ops | Prompt files versioned via git, CI trains on checked-in workbook, `ruff` + `pytest` |
 
-Full architecture and AWS/MLOps notes: [`DESIGN.md`](DESIGN.md).
+**Architecture, deployment, evaluation, and notebook-backed justifications** (submission design document): [`DESIGN.md`](DESIGN.md). Supporting detail: [`docs/FEATURE_ENGINEERING.md`](docs/FEATURE_ENGINEERING.md), [`docs/AWS_DEPLOYMENT.md`](docs/AWS_DEPLOYMENT.md), [`docs/PRODUCTION_ARCHITECTURE.md`](docs/PRODUCTION_ARCHITECTURE.md).
 
 ## Dataset and label
 
@@ -79,8 +79,10 @@ Without keys, Streamlit and `/explain`/`/synthetic` use deterministic **offline 
 | [`notebooks/02_feature_engineering.ipynb`](notebooks/02_feature_engineering.ipynb) | `load_claims_training_frame`, `engineer_features`, preprocessor shape |
 | [`notebooks/03_train_model.ipynb`](notebooks/03_train_model.ipynb) | **`subprocess` → `python -m app.ml.train --no-tune`**, then reads `approval_model_meta.json`; optional in-process `train()` |
 | [`notebooks/04_inference_and_genai.ipynb`](notebooks/04_inference_and_genai.ipynb) | Bundle load, `predict_batch`, `top_feature_names`, `explain_personas` |
+| [`notebooks/05_mock_incremental_data.ipynb`](notebooks/05_mock_incremental_data.ipynb) | Sparse decline / RF-border strata → targeted **synthetic** claim generation (LLM) |
+| [`notebooks/06_evaluation_and_monitoring.ipynb`](notebooks/06_evaluation_and_monitoring.ipynb) | Eval logs (ML + dual-persona GenAI), drift views, baseline-from-meta monitoring narrative |
 
-Regenerate all four from the generator (after editing steps): `python scripts/emit_pipeline_notebooks.py`
+Regenerate notebooks 01–04 from the generator (after editing steps): `python scripts/emit_pipeline_notebooks.py`
 
 Run notebooks with the project root on `PYTHONPATH` **or** launch Jupyter from the repo root so the first cell can add `PROJECT_ROOT` to `sys.path`.
 

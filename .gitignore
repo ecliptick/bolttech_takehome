@@ -20,8 +20,8 @@ htmlcov/
 .vscode/
 
 # Artifacts (regenerate via train script; optional checkout)
-artifacts/*.joblib
-artifacts/*.json
+# artifacts/*.joblib
+# artifacts/*.json
 mlruns/
 
 # Notebook LLM caches (translations; may resemble PII narratives)

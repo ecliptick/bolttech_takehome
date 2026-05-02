@@ -23,6 +23,69 @@ from app.schemas import ClaimInput, Persona
 
 SETTINGS = get_settings()
 
+_MLOPS_RETRAIN_REQUIRED_KEYS: frozenset[str] = frozenset(
+    {
+        "n_rows_base",
+        "n_rows_drift",
+        "n_rows_combined",
+        "metrics_before",
+        "metrics_after",
+        "baseline_before",
+        "baseline_after",
+        "data_before_tooltip",
+        "data_after_tooltip",
+    }
+)
+
+# Exactly the same ordering as ``app.ml.features._DAMAGE_FLOAT`` (``other`` last).
+_SYMPTOM_BINARY_FIELDS: tuple[str, ...] = (
+    "turnOnOff",
+    "touchScreen",
+    "smashed",
+    "frontCamera",
+    "backCamera",
+    "frontOrBackCamera",
+    "audio",
+    "mic",
+    "buttons",
+    "connection",
+    "charging",
+)
+_OTHER_SYMPTOM_FIELD: str = "other"
+_SYMPTOM_RADIO_OPTIONS: tuple[str, ...] = ("Yes", "No", "Unknown")
+
+
+_MLOPS_RETRAIN_STATE_KEY = "mlops_retrain_result"
+
+
+def _sanitize_mlops_retrain_session() -> None:
+    """Drop retrain results from older runs / wrong shapes (avoids KeyError on every rerun)."""
+    # Legacy session key collided with ``st.button(key="mlops_retrain")`` (widget keys own ``session_state``).
+    st.session_state.pop("mlops_retrain", None)
+    blob = st.session_state.get(_MLOPS_RETRAIN_STATE_KEY)
+    if blob is None:
+        return
+    if not isinstance(blob, dict) or not _MLOPS_RETRAIN_REQUIRED_KEYS.issubset(blob.keys()):
+        st.session_state.pop(_MLOPS_RETRAIN_STATE_KEY, None)
+
+
+def _symptom_seed_radio_index(value: object) -> int:
+    """Map stored float/None to index in ``_SYMPTOM_RADIO_OPTIONS`` (Yes=0, No=1, Unknown=2)."""
+    if value is None:
+        return 2
+    xf = pd.to_numeric(value, errors="coerce")
+    if pd.isna(xf):
+        return 2
+    return 0 if float(xf) >= 0.5 else 1
+
+
+def _symptom_radio_to_model_value(choice: str) -> float | None:
+    if choice == "Yes":
+        return 1.0
+    if choice == "No":
+        return 0.0
+    return None
+
 
 @st.cache_data(show_spinner=True)
 def load_claim_sheet(path_str: str) -> pd.DataFrame:
@@ -100,7 +163,7 @@ def _select_or_text_input(
     return str(st.text_input(label, value=cur, key=widget_key)).strip()
 
 
-def render_predict_form(seed: ClaimInput, df_all: pd.DataFrame) -> ClaimInput:
+def render_predict_form(seed: ClaimInput, df_all: pd.DataFrame, *, seed_row_index: int) -> ClaimInput:
     c1, c2, c3 = st.columns(3)
     excess = c1.number_input("excessFee", value=float(seed.excessFee or 0.0))
     rrp = c2.number_input("rrp", value=float(seed.rrp or 0.0))
@@ -193,35 +256,38 @@ def render_predict_form(seed: ClaimInput, df_all: pd.DataFrame) -> ClaimInput:
         widget_key="form_country",
     )
 
-    st.markdown("Damage / symptom indicators *(optional floats; blanks use model imputer)*")
-    dmg_names = [
-        "turnOnOff",
-        "touchScreen",
-        "smashed",
-        "frontCamera",
-        "backCamera",
-        "frontOrBackCamera",
-        "audio",
-        "mic",
-        "buttons",
-        "connection",
-        "charging",
-        "other",
-    ]
-
+    st.markdown(
+        "Symptom flags — **Yes / No / Unknown** (model gets **1 / 0 / NaN**). "
+        "**other** stays a free numeric field (dataset sometimes uses mixed encodings)."
+    )
     dmg_vals: dict[str, float | None] = {}
     dmg_cols = st.columns(4)
-    for idx, fname in enumerate(dmg_names):
-        fv = getattr(seed, fname, None)
-        starter = ""
-        if fv is not None:
-            xf = pd.to_numeric(fv, errors="coerce")
-            if pd.notna(xf):
-                xv = float(xf)
-                starter = str(int(xv)) if xv.is_integer() else str(xv)
+    for idx, fname in enumerate(_SYMPTOM_BINARY_FIELDS):
+        ridx = _symptom_seed_radio_index(getattr(seed, fname, None))
         with dmg_cols[idx % len(dmg_cols)]:
-            raw = st.text_input(fname, value=starter)
-        dmg_vals[fname] = parse_maybe_float(raw)
+            pick = st.radio(
+                fname,
+                _SYMPTOM_RADIO_OPTIONS,
+                index=ridx,
+                horizontal=True,
+                key=f"sym_r{seed_row_index}_{fname}",
+            )
+        dmg_vals[fname] = _symptom_radio_to_model_value(str(pick))
+
+    fv_other = getattr(seed, _OTHER_SYMPTOM_FIELD, None)
+    starter_other = ""
+    if fv_other is not None:
+        xf_o = pd.to_numeric(fv_other, errors="coerce")
+        if pd.notna(xf_o):
+            xv_o = float(xf_o)
+            starter_other = str(int(xv_o)) if xv_o.is_integer() else str(xv_o)
+    with dmg_cols[len(_SYMPTOM_BINARY_FIELDS) % len(dmg_cols)]:
+        raw_other = st.text_input(
+            _OTHER_SYMPTOM_FIELD,
+            value=starter_other,
+            key=f"sym_r{seed_row_index}_other",
+        )
+    dmg_vals[_OTHER_SYMPTOM_FIELD] = parse_maybe_float(raw_other)
 
     issue = st.text_area("issueDesc", value=str(seed.issueDesc or ""), height=100)
 
@@ -293,9 +359,11 @@ seed_claim = dataframe_row_to_claim(df_all, int(seed_idx))
 if show_seed_json:
     st.sidebar.code(json.dumps(seed_claim.model_dump(mode="json"), indent=2, default=str), language="json")
 
-rebuilt_claim = render_predict_form(seed_claim, df_all)
+rebuilt_claim = render_predict_form(seed_claim, df_all, seed_row_index=int(seed_idx))
 
 tabs = st.tabs(["Predict + drivers", "Multi-persona explain", "Synthetic stress", "DB & MLOps Pipeline"])
+
+_sanitize_mlops_retrain_session()
 
 with tabs[0]:
     if st.button("Run prediction", type="primary", use_container_width=True, key="run_pred_btn"):
@@ -417,21 +485,21 @@ with tabs[3]:
             "Each side uses a fresh stratified 80/20 holdout with the same `--no-tune` random forest settings as "
             "`python -m app.ml.train --no-tune`."
         )
-        if st.button("Run in-memory retrain comparison", use_container_width=True, type="primary", key="mlops_retrain"):
+        if st.button("Run in-memory retrain comparison", use_container_width=True, type="primary", key="mlops_retrain_run_btn"):
             try:
                 with st.spinner("Fitting two holdout evaluations…"):
-                    st.session_state["mlops_retrain"] = compare_retrain_holdout(
+                    st.session_state[_MLOPS_RETRAIN_STATE_KEY] = compare_retrain_holdout(
                         base_data_path=data_enriched,
                         drift_csv_path=data_drift,
                         tune=False,
                     )
                 st.success("Compared base vs base+drift (nothing written to disk).")
             except Exception as exc:  # noqa: BLE001
-                st.session_state.pop("mlops_retrain", None)
+                st.session_state.pop(_MLOPS_RETRAIN_STATE_KEY, None)
                 st.error(f"Retrain simulation failed: {exc}")
 
-    if "mlops_retrain" in st.session_state:
-        r = st.session_state["mlops_retrain"]
+    if _MLOPS_RETRAIN_STATE_KEY in st.session_state:
+        r = st.session_state[_MLOPS_RETRAIN_STATE_KEY]
         prev_n = int(r["n_rows_base"])
         new_n = int(r["n_rows_combined"])
         drift_n = int(r["n_rows_drift"])
