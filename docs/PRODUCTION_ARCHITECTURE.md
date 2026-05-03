@@ -12,7 +12,7 @@ This document is the **zoom-in on runtime observability**. For the full architec
 
 ## Structured log events (`prediction` and `explain`)
 
-Both events are produced by `app/main.py` via `logging.getLogger("claim_agent").info(json.dumps(payload))`. **One JSON object per line**. Locally this is **stdout**; on AWS this is collected into [**CloudWatch Logs**](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html) (log group naming is environment-specific; the Terraform stub uses a single group — see `infra/terraform/main.tf`).
+Both events are produced by `app/main.py` via `logging.getLogger("claim_agent").info(json.dumps(payload))`. **One JSON object per line**. Locally this is **stdout**; on AWS this is collected into [**CloudWatch Logs**](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html) (log group name from Terraform output `cloudwatch_log_group_api`, typically `/<project>-<env>/api`).
 
 **Important:** Only **`/v1/predict`** and **`/v1/explain`** emit these JSON events today. **`/v1/synthetic`** and **`/v1/repair-text`** call GenAI but do **not** write `event=explain` or an extra `event=prediction`; treat them under normal HTTP / access logs unless you extend `app/main.py`.
 
@@ -127,8 +127,8 @@ flowchart TB
   META --> API
   META -.-> GATE
   GATE -.-> SSM
-  SSM -.-> ECS
-  ECS -.-> API
+  SSM --> ECS
+  ECS --> API
   API -->|POST explain, synthetic, repair-text| GEM
   GEM -->|responses to handlers| API
   API --> PRED
@@ -141,14 +141,14 @@ flowchart TB
 
 GenAI is **not** a dead-end box: **`/v1/explain`**, **`/v1/synthetic`**, and **`/v1/repair-text`** call out; only **`/v1/explain`** produces the **`event=explain`** structured line paired with **`event=prediction`**.
 
-The boxes inside `prod` are **not** implemented in this repository (see `infra/terraform/main.tf` — it declares only ECR, two versioned + encrypted S3 buckets, and the CloudWatch log group). They use dashed arrows. The two structured log kinds, lineage fields on both, **`GET /metrics`**, and the GenAI return path **are** implemented.
+The **metric-threshold gate** is still **not** automated (dashed in the diagram). **`infra/terraform/`** **does** provision **SSM** active-model URIs, **ECS Fargate** behind an **ALB**, plus existing **ECR**, **S3**, and **CloudWatch Logs** (see `infra/terraform/README.md`). The two structured log kinds, lineage fields on both, **`GET /metrics`**, and the GenAI return path **are** implemented in application code.
 
 ## Diagram + runtime glossary
 
 | Term | Meaning here |
 |------|----------------|
 | **Metric-threshold gate** | Planned CI/deploy check: compare new `approval_model_meta.json` metrics to the last promoted baseline before shipping artifacts — **documented**, not wired. |
-| **SSM active-model URI** | Planned Parameter Store pointer to the S3 object (or bundle) ECS tasks should load — **documented**, not wired (prototype reads baked `artifacts/`). |
-| **ECS Fargate + ALB** | Where the **FastAPI container** runs in prod; tasks **pull** persisted `joblib` / meta via URI / bake — Fargate does not “store” the model, it serves it. |
+| **SSM active-model URI** | **Parameter Store** keys under `/<project>/<env>/` — **created by Terraform**; ECS injects them as `ACTIVE_MODEL_S3_URI` / `ACTIVE_MODEL_META_S3_URI`. **`app/ml/predict.py`** downloads from S3 when those env vars are `s3://…` URIs (needs objects in the artifacts bucket). |
+| **ECS Fargate + ALB** | **Provisioned in Terraform** — where the **FastAPI** service runs; tasks download promoted `joblib` / `meta.json` from **S3** when env points at `s3://…`, or use image-baked `artifacts/` until upload. |
 | **CloudWatch Logs** | Managed log sink: container **stdout/stderr** → log streams; enables Insights, alarms, subscriptions. |
 | **Prometheus** | OSS metrics model; this app exposes a **scrapable** `/metrics` handler (see above). |

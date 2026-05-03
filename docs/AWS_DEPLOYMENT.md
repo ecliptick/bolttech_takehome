@@ -113,7 +113,7 @@ Container entrypoint: `uvicorn app.main:app --host 0.0.0.0 --port 8000` (see roo
 
 | Principle | Application |
 |-----------|----------------|
-| **IaC** | Define VPC, ECS service, ALB, S3 buckets with **Terraform** or **AWS CDK** (`infra/terraform` holds a minimal stub). Same stack names per env (`dev`/`staging`/`prod`). |
+| **IaC** | Define VPC, ECS, ALB (this repo ships **`infra/terraform`**) plus **Terraform Cloud / S3+Dynamo backend**, **OIDC IAM role** for GitHub deploys if desired, and **`aws configure`/env creds**. Same stack names per env (`dev`/`staging`/`prod`). |
 | **CI/CD for models and prompts** | GitHub Actions trains on committed Excel (see `.github/workflows/ci.yml`), runs tests, and can **upload artifacts** as workflow artifacts. Promote the same **image digest + S3 artifact hash** to staging before prod. |
 | **Model versioning** | `artifacts/approval_model_meta.json` records training seed, metric, timestamp; ECS task definition env `MODEL_VERSION` can mirror Git SHA. |
 | **Prompt versioning** | Prompts live under `prompts/`; `/v1/model/info` lists files. Tag releases when prompt semantics change; optional S3 sync in deploy pipeline. |

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
 from typing import Any
 
@@ -21,11 +22,50 @@ def _artifacts_dir() -> Path:
 _bundle: dict[str, Any] | None = None
 
 
+def _parse_s3_uri(uri: str) -> tuple[str, str]:
+    if not uri.startswith("s3://"):
+        raise ValueError(f"Not an s3 URI: {uri!r}")
+    rest = uri.removeprefix("s3://")
+    if "/" not in rest:
+        raise ValueError(f"Missing object key in s3 URI: {uri!r}")
+    bucket, _, key = rest.partition("/")
+    if not bucket or not key:
+        raise ValueError(f"Invalid s3 URI: {uri!r}")
+    return bucket, key
+
+
+def _download_s3_uri_to_file(uri: str, dest: Path) -> None:
+    try:
+        import boto3
+    except ImportError as e:
+        raise RuntimeError(
+            "ACTIVE_MODEL_*_S3_URI is set but boto3 is not installed. "
+            "Install boto3 or unset those environment variables."
+        ) from e
+    bucket, key = _parse_s3_uri(uri)
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    tmp = dest.with_suffix(dest.suffix + ".tmp")
+    boto3.client("s3").download_file(bucket, key, str(tmp))
+    tmp.replace(dest)
+
+
+def _maybe_fetch_artifacts_from_s3() -> None:
+    """When ACTIVE_MODEL_S3_URI / ACTIVE_MODEL_META_S3_URI are set (e.g. ECS + Terraform), sync from S3 first."""
+    art = _artifacts_dir()
+    joblib_uri = os.environ.get("ACTIVE_MODEL_S3_URI", "").strip()
+    if joblib_uri.startswith("s3://"):
+        _download_s3_uri_to_file(joblib_uri, art / "approval_model.joblib")
+    meta_uri = os.environ.get("ACTIVE_MODEL_META_S3_URI", "").strip()
+    if meta_uri.startswith("s3://"):
+        _download_s3_uri_to_file(meta_uri, art / "approval_model_meta.json")
+
+
 def load_model_bundle() -> dict[str, Any]:
     """Load joblib bundle once per process (same object reused for predict + importance)."""
     global _bundle
     if _bundle is not None:
         return _bundle
+    _maybe_fetch_artifacts_from_s3()
     path = _artifacts_dir() / "approval_model.joblib"
     if not path.exists():
         raise FileNotFoundError(
@@ -62,6 +102,7 @@ def model_identity_for_logs() -> dict[str, Any]:
 
 
 def load_metadata() -> dict[str, Any]:
+    _maybe_fetch_artifacts_from_s3()
     meta_path = _artifacts_dir() / "approval_model_meta.json"
     if meta_path.exists():
         return json.loads(meta_path.read_text(encoding="utf-8"))

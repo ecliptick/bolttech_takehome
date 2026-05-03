@@ -66,19 +66,19 @@ flowchart TB
   API --> PROM
 ```
 
-**Dropped vs the old diagram:** `CURATED` (no curation exists), the prompt-refresh arrow (prompts are baked into the image), the SSM pointer (no runtime model-version resolution), and the metric-threshold "release gate" (CI has lint/test/train/Docker smoke only).
+**Dropped vs the old diagram:** `CURATED` (no curation exists), the prompt-refresh loop (prompts stay in the image/git), and an **automated** CI **metric-threshold "release gate"** (still not in `.github/workflows/ci.yml`). Runtime model promotion is **SSM + S3 download** when `ACTIVE_MODEL_*` env vars are `s3://…`; otherwise the Docker image’s baked `artifacts/` are used.
 
 ### 1.2 What production on AWS would add (delta)
 
 ```mermaid
 flowchart LR
-  subgraph delta["Not implemented — production extensions"]
+  subgraph delta["Terraform (`infra/terraform`) + documented extensions"]
     direction TB
     S3_DATA["S3 training-data bucket (versioned)<br/>sources/claim_use_case_dataset.xlsx"]
     S3_ART["S3 ml-artifacts bucket (versioned)<br/>models/approval_model.{joblib,json}"]
     ECR["ECR image repository"]
     GATE["CI metric-threshold gate<br/>compare meta.metrics vs last promoted baseline"]
-    SSM["SSM Parameter Store<br/>/claim-agent/active-model-uri"]
+    SSM["SSM Parameter Store<br/>/<project>/<env>/active-model-{,meta}-uri"]
     ALB["ALB + ECS Fargate service<br/>VPC, SG, autoscaling"]
     CW["CloudWatch Logs + Alarms<br/>(stdout → Log Group)"]
     EB["EventBridge schedule<br/>→ Step Functions retrain state machine"]
@@ -86,14 +86,14 @@ flowchart LR
 
   S3_DATA -.->|pulled by training job| GATE
   GATE -.-> S3_ART
-  S3_ART -.->|signed URL / init container| ALB
-  ECR -.-> ALB
-  SSM -.->|which artifact to load| ALB
+  S3_ART -.->|task downloads when env = s3://…| ALB
+  ECR --> ALB
+  SSM --> ALB
   ALB -.-> CW
   EB -.-> GATE
 ```
 
-`infra/terraform/main.tf` currently declares **only** the ECR repo, the two S3 buckets (versioned + encrypted + public-access-blocked), and one CloudWatch log group. The gate, SSM pointer, ECS service, ALB, EventBridge, and Step Functions are *described in documentation and intentionally left as placeholders* — see `infra/terraform/README.md`.
+**In Terraform today:** VPC (public + private subnets), optional NAT, **Application Load Balancer**, **ECS cluster + Fargate service**, **IAM**, **SSM** parameters for promoted model object URIs (injected into the task as `ACTIVE_MODEL_S3_URI` / `ACTIVE_MODEL_META_S3_URI`), **ECR**, **two versioned encrypted S3 buckets**, **CloudWatch log group**, and optional **Secrets Manager** stub for `GEMINI_API_KEY`. The **application** downloads `joblib` + `meta.json` from S3 on startup when those env vars are `s3://…` (see `app/ml/predict.py`). **Not in Terraform:** CI **metric-threshold gate**, **Route 53**, **ACM/WAF**, **EventBridge → Step Functions** retrain, and a hosted **Prometheus** scraper — see `infra/terraform/README.md`.
 
 ### 1.3 Runtime stack at a glance
 
@@ -113,7 +113,7 @@ flowchart LR
 |----------|----------|---------|
 | **This file (`DESIGN.md`)** | Architecture and product decisions | Prototype vs production delta, ML + GenAI behavior, notebooks, deployment/MLOps principles. |
 | **`docs/PRODUCTION_ARCHITECTURE.md`** | Operators / observability | **Exact** structured log fields for `prediction` vs `explain`, diagram tying logs to artifacts and Prometheus. |
-| **`docs/AWS_DEPLOYMENT.md`** | AWS rollout | Service choices (Fargate, ALB, S3, ECR), networking, LLM cost controls, Terraform stub vs full stack. |
+| **`docs/AWS_DEPLOYMENT.md`** | AWS rollout | Service choices (Fargate, ALB, S3, ECR), networking, LLM cost controls; IaC paths in `infra/terraform`. |
 
 | Component | One-line role |
 |-----------|----------------|
@@ -127,8 +127,8 @@ flowchart LR
 | **VPC endpoints / NAT** | Private or controlled egress from tasks to S3 and Google AI / OpenAI. |
 | **CloudWatch Logs** | Centralises **stdout** (structured JSON lines) into a log group; optional subscriptions to Kinesis / OpenSearch. |
 | **CloudWatch Metrics / alarms** | Infra and custom alerting (full wiring is production stretch). |
-| **SSM Parameter Store** | Production delta: active model URI, non-secret config; often paired with Secrets Manager for API keys. |
-| **Prometheus (`GET /metrics`)** | **In-process** request metrics via `prometheus_fastapi_instrumentator`; you run or attach a scraper — not created by the minimal Terraform in this repo. |
+| **SSM Parameter Store** | **Terraform** publishes `/<project>/<env>/active-model-*` URIs; ECS wires them into the task (see §1.2). Pair with Secrets Manager for `GEMINI_API_KEY` when not using deterministic GenAI fallback. |
+| **Prometheus (`GET /metrics`)** | **In-process** request metrics via `prometheus_fastapi_instrumentator`; deploy a scraper/agent separately — **not** created by this Terraform module. |
 | **Google AI Studio `generateContent`** | Live GenAI for explain / synthetic / repair when configured; otherwise the app uses local deterministic outputs. |
 
 ---
@@ -222,9 +222,9 @@ Primary LLM: **Google AI Studio `generateContent`** (the Gemini / hosted-Gemma e
 |---------|---------|-----------|
 | Online API | **ECS Fargate + ALB** | Same long-lived Uvicorn process as dev; avoids Lambda payload/cold-start pain for wide claim JSON and parallel persona calls |
 | Images | **ECR** | Immutable digests; pair each release with the model-meta JSON git SHA for lineage |
-| Artifacts | **S3 versioning on** | Rollback for `joblib + meta.json + prompts/`; the Terraform stub declares the bucket with versioning + server-side encryption + public-access block |
-| Secrets | **SSM / Secrets Manager** | `GEMINI_API_KEY`, future DB URLs; mounted as task env |
-| IaC | **Terraform** (`infra/terraform/main.tf`) | Currently declares ECR, two versioned encrypted S3 buckets, and a CloudWatch log group. ECS service, ALB, VPC, and SSM parameter are intentionally stubbed (see `infra/terraform/README.md`) |
+| Artifacts | **S3 versioning on** | Rollback for `joblib + meta.json + prompts/`; Terraform provisions buckets with versioning + server-side encryption + public-access block. |
+| Secrets | **SSM / Secrets Manager** | `GEMINI_API_KEY` optionally from Secrets Manager (Terraform toggle); Parameter Store URIs injected as `ACTIVE_MODEL_*` on ECS. |
+| IaC | **Terraform** (`infra/terraform/*.tf`) | VPC (optional NAT), ALB, ECS Fargate, IAM, ECR, S3, CloudWatch Logs, SSM. **Excluded:** CI gate, EventBridge→Step Functions, Route 53, WAF, hosted Prometheus scraper — see `infra/terraform/README.md`. |
 
 Alternatives (see `docs/AWS_DEPLOYMENT.md`): **App Runner** for the simplest "public HTTPS from a repo" path; **Lambda + container** for spiky minimal scale; **SageMaker** if training migrates off GitHub Actions.
 
@@ -291,7 +291,7 @@ The notebook CSVs are the offline analogue of these events with extra columns (b
 | Gemini as hosted LLM | Amazon Bedrock, Azure OpenAI, on-prem — swap the `generate_content` wrapper; keep the prompt files |
 | Global feature importances for persona explanations | `shap.TreeExplainer` for per-claim attributions if audit requires it |
 | JSON-on-disk model metadata | MLflow / Vertex Model Registry + URI inside `approval_model_meta.json` |
-| Terraform stub with ECR + S3 + log group only | Full VPC + ECS service + ALB + SSM + EventBridge + Step Functions; or a managed pattern such as App Runner |
+| Baseline IaC (`infra/terraform`) | Full **ECS + ALB + VPC + SSM +** optional Gemini secret; excludes Route 53, WAF, CI gate, EB/Step Functions, hosted Prometheus fleet |
 
 ---
 
@@ -322,10 +322,11 @@ Regenerate notebooks 01–04 from the scripted emitter after code changes: `pyth
 | FastAPI + Streamlit + Docker + CI (train, lint, test, build, health smoke) | Implemented |
 | Structured JSON-line prediction/explain logs with model-lineage correlation | Implemented |
 | Prometheus `/metrics` (opt-out via `DISABLE_PROMETHEUS`) | Implemented |
-| Terraform: ECR + versioned/encrypted S3 buckets + CloudWatch log group | Implemented |
-| Metric-threshold release gate in CI; ECR push; S3 artifact upload; SSM active-model pointer | Documented, not wired |
-| Full VPC + ECS service + ALB; EventBridge → Step Functions retrain | Documented, not wired |
-| Per-claim SHAP; MLflow registry; automated drift alarms | Documented, not wired |
+| Terraform: ECR + versioned encrypted S3 + CloudWatch + VPC + NAT (opt) + ALB + ECS Fargate + SSM + IAM (+ optional Gemini secret) | Implemented |
+| Terraform stack (VPC+ECS+ALB+SSM+IaC per §1.2) deployed | Implemented in `infra/terraform` |
+| Metric-threshold release gate in CI; `docker push` ECR + S3 artifact promotion + SSM bumps from pipelines | Documented — not in `.github/workflows` yet |
+| EventBridge → Step Functions managed retrain; Route 53; WAF | Documented alternatives / manual add-ons |
+| Per-claim SHAP; MLflow registry; automated drift alarms | Documented extensions |
 
 ---
 
