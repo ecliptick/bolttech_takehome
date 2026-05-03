@@ -35,9 +35,36 @@ flowchart LR
   ECS --> TASK
   TASK --> S3
   TASK --> EP
+  EP --> TASK
   TASK --> CW
   ECR --> ECS
 ```
+
+**GenAI egress is request/response:** tasks open HTTPS to Google AI (or OpenAI-compatible paths in code); model output returns to the same FastAPI handlers that serve **`POST /v1/explain`**, **`POST /v1/synthetic`**, and **`POST /v1/repair-text`**.
+
+## Diagram components (quick reference)
+
+| Component | Role |
+|-----------|------|
+| **Route 53** | DNS name → ALB (or other target). |
+| **AWS WAF** (optional) | Web ACL in front of ALB; rate-based rules help cap abuse of LLM-heavy routes. |
+| **ALB** | TLS termination, routing, health checks; spreads traffic across Fargate tasks. |
+| **ECS on Fargate** | Runs the API container (same Uvicorn process as local); no EC2 fleet to patch for a prototype. |
+| **FastAPI tasks** | `uvicorn app.main:app`; serves `/v1/*`, `/health`, `/metrics`. |
+| **S3 (versioned buckets)** | Training snapshots, `approval_model.{joblib,json}`, optional prompt prefixes; object versioning for rollback. |
+| **ECR** | Stores immutable container images; ECS pulls by digest/tag. |
+| **VPC endpoints / HTTPS egress** | Private or controlled path from tasks to S3 and to LLM vendor APIs (compliance-dependent). |
+| **CloudWatch Logs / Metrics** | Centralised logs from task stdout; metrics/alarms for ops (full alarm set is deploy-specific). |
+| **X-Ray** (optional) | Distributed tracing — not required for the minimal sketch. |
+| **Prometheus** | **Not an AWS box in this diagram:** the app exposes **`GET /metrics`** for a scraper; see `docs/PRODUCTION_ARCHITECTURE.md`. |
+
+## How this doc fits with `DESIGN.md` and `PRODUCTION_ARCHITECTURE.md`
+
+| Doc | Focus |
+|-----|--------|
+| [`DESIGN.md`](../DESIGN.md) | Single source of truth: prototype vs prod delta, ML, GenAI prompts, CI, evaluation. |
+| [`PRODUCTION_ARCHITECTURE.md`](PRODUCTION_ARCHITECTURE.md) | **Structured logs** (`prediction` / `explain`), join keys, model lineage fields, Prometheus vs CloudWatch. |
+| **This file** | **AWS-specific** layout: why Fargate + ALB, buckets, networking, LLM spend controls. |
 
 ## REST API (already implemented)
 
@@ -52,6 +79,8 @@ The service is a **FastAPI** app (`app/main.py`) with:
 | `POST /v1/repair-text` | Text cleanup / optional LLM rewrite |
 | `GET /v1/model/info` | Model metadata and prompt file list |
 | `GET /metrics` | Prometheus metrics (when enabled) |
+
+Structured JSON lines (`event=prediction` / `event=explain`) are emitted only from **`/v1/predict`** and **`/v1/explain`**; see [`PRODUCTION_ARCHITECTURE.md`](PRODUCTION_ARCHITECTURE.md).
 
 Container entrypoint: `uvicorn app.main:app --host 0.0.0.0 --port 8000` (see root `Dockerfile`).
 

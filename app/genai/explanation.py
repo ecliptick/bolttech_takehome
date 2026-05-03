@@ -25,12 +25,15 @@ def generate_claim_explanation(
     # For a CUSTOMER:
     # - Tone: Empathetic, clear, and non-technical.
     # - Focus: Explain *why* their specific claim was approved or denied based on their policy and damage.
-    # - Actionable Insights: What they need to do next (e.g., pay the excess fee, provide more evidence, or options for repair).
+    # - Actionable Insights: What they need to do next (e.g., pay the excess fee, provide more evidence,
+    #   or options for repair).
     #
     # For a CLAIMS ADJUSTER:
     # - Tone: Analytical, objective, and data-driven.
-    # - Focus: Highlight the ML model's confidence, the key features driving the decision (e.g., specific symptom flags, excess/RRP ratio), and potential anomalies.
-    # - Actionable Insights: Recommendations for manual review, potential fraud signals, or policy edge cases to investigate.
+    # - Focus: Highlight the ML model's confidence, the key features driving the decision (e.g.,
+    #   specific symptom flags, excess/RRP ratio), and potential anomalies.
+    # - Actionable Insights: Recommendations for manual review, potential fraud signals, or policy edge
+    #   cases to investigate.
 
     prompt = f"""
 You are an expert insurance claims AI assistant.
@@ -50,14 +53,18 @@ Please write a highly tailored explanation for the target persona.
 If the Persona is CUSTOMER:
 1. Use an empathetic, clear, non-technical tone.
 2. Address the customer directly ("Dear Customer" or "Hi").
-3. Explain the decision clearly based on the facts of the damage and their policy. Do not mention "machine learning models" or "probabilities".
-4. Provide actionable next steps (e.g., "Next, please arrange to pay the excess fee" or "Unfortunately, this falls outside your coverage, but you can appeal by...").
+3. Explain the decision clearly based on the facts of the damage and their policy.
+   Do not mention "machine learning models" or "probabilities".
+4. Provide actionable next steps (e.g., "Next, please arrange to pay the excess fee"
+   or "Unfortunately, this falls outside your coverage, but you can appeal by...").
 
 If the Persona is CLAIMS_ADJUSTER:
 1. Use a professional, analytical, and data-driven tone.
 2. Focus on why the model made this prediction, highlighting the key contributing features and the confidence score.
-3. Call out any specific anomalies in the claim details (e.g., high excess fee relative to device value, unusual damage combinations like both water and screen damage).
-4. Provide actionable insights for the adjuster (e.g., "Recommend fast-tracking approval" or "Recommend manual investigation due to borderline probability and contradictory symptoms").
+3. Call out any specific anomalies in the claim details (e.g., high excess fee relative to device value,
+   unusual damage combinations like both water and screen damage).
+4. Provide actionable insights for the adjuster (e.g., "Recommend fast-tracking approval"
+   or "Recommend manual investigation due to borderline probability and contradictory symptoms").
 
 Output ONLY the explanation text.
 """

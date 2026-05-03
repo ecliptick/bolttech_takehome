@@ -69,12 +69,30 @@ async def explain_personas(
             # Persona-specific header lines for offline stubs
             _persona_headers = {
                 Persona.customer: "Our automated review suggests your claim would likely be",
-                Persona.high_value_insured: "For your high-value device claim, our automated review suggests the outcome would likely be",
-                Persona.low_value_insured: "For your device claim, our automated review suggests the outcome would likely be",
-                Persona.small_issue: "For this single-issue repair claim, our automated review suggests the outcome would likely be",
-                Persona.end_of_duration: "Given your policy's current coverage window, our automated review suggests the outcome would likely be",
-                Persona.theft_claimant: "For this theft claim, our automated review suggests the outcome would likely be",
-                Persona.repeat_claimant: "Given the prior coverage activity on this policy, our automated review suggests the outcome would likely be",
+                Persona.high_value_insured: (
+                    "For your high-value device claim, our automated review suggests "
+                    "the outcome would likely be"
+                ),
+                Persona.low_value_insured: (
+                    "For your device claim, our automated review suggests "
+                    "the outcome would likely be"
+                ),
+                Persona.small_issue: (
+                    "For this single-issue repair claim, our automated review suggests "
+                    "the outcome would likely be"
+                ),
+                Persona.end_of_duration: (
+                    "Given your policy's current coverage window, our automated review suggests "
+                    "the outcome would likely be"
+                ),
+                Persona.theft_claimant: (
+                    "For this theft claim, our automated review suggests "
+                    "the outcome would likely be"
+                ),
+                Persona.repeat_claimant: (
+                    "Given the prior coverage activity on this policy, our automated review suggests "
+                    "the outcome would likely be"
+                ),
             }
 
             texts: dict[str, str] = {}

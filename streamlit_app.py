@@ -485,7 +485,12 @@ with tabs[3]:
             "Each side uses a fresh stratified 80/20 holdout with the same `--no-tune` random forest settings as "
             "`python -m app.ml.train --no-tune`."
         )
-        if st.button("Run in-memory retrain comparison", use_container_width=True, type="primary", key="mlops_retrain_run_btn"):
+        if st.button(
+            "Run in-memory retrain comparison",
+            use_container_width=True,
+            type="primary",
+            key="mlops_retrain_run_btn",
+        ):
             try:
                 with st.spinner("Fitting two holdout evaluations…"):
                     st.session_state[_MLOPS_RETRAIN_STATE_KEY] = compare_retrain_holdout(
